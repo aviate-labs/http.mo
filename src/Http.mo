@@ -1,14 +1,14 @@
 module {
     public type HeaderField = (Text, Text);
 
-    public type HttpRequest = {
+    public type Request = {
         url     : Text;
         method  : Text;
         body    : [Nat8];
         headers : [HeaderField];
     };
 
-    public type HttpResponse = {
+    public type Response = {
         body        : [Nat8];
         headers     : [HeaderField];
         status_code : Nat16;
