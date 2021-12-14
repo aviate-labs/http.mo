@@ -4,12 +4,12 @@ module {
     public type Request = {
         url     : Text;
         method  : Method;
-        body    : [Nat8];
+        body    : Blob;
         headers : [HeaderField];
     };
 
     public type Response = {
-        body        : [Nat8];
+        body        : Blob;
         headers     : [HeaderField];
         status_code : StatusCode;
     };
