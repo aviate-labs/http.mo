@@ -1,12 +1,16 @@
 import Query "../src/Query";
 
-switch (Query.split("/endpoint?foo=0&bar=baz")) {
-    case (#err(_)) assert(false);
-    case (#ok(t, fs)) {
-        assert(t == "/endpoint");
-        assert(fs == [
-            ("foo", "0"),
-            ("bar", "baz"),
-        ]);
-    };
+do {
+    let (t, fs) = Query.parse("/endpoint?foo=0&bar=baz");
+    assert(t == "/endpoint");
+    assert(fs == [
+        ("foo", "0"),
+        ("bar", "baz"),
+    ]);
+};
+
+do {
+    let (t, fs) = Query.parse("/");
+    assert(t == "/");
+    assert(fs == []);
 };
