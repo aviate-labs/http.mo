@@ -1,6 +1,6 @@
-import Array "mo:base/Array";
-import Iter "mo:base/Iter";
-import Text "mo:base/Text";
+import Array "mo:base-0.7.3/Array";
+import Iter "mo:base-0.7.3/Iter";
+import Text "mo:base-0.7.3/Text";
 
 module {
     public type Field = (
